@@ -24,33 +24,40 @@
             #topbar {
                 background-image: linear-gradient(0deg, #274C73, #336699);
                 height: 3em;
-                display: flex;
                 width: 100%;
+                display: inline-flex;
+                flex-direction: row;
+                justify-content: space-between;
             }
-            a:hover {
-                background-image: linear-gradient(180deg, #3f80bf, #336699);
-            }
-            .title-text {
+            .title-text, .title-link {
                 color: azure;
-                padding-top: calc(1em + 2px);
-                padding-bottom: calc(1em - 1px);
+                padding-top: 1em;
+                padding-bottom: 1em;
                 padding-left: 0.5em;
                 padding-right: 0.5em;
-                flex-grow: 1;
+                flex-grow: 0;
             }
-            a.title-text {
+            a.title-text, a.title-link {
                 text-decoration: none;
             }
-            .topbar-right {
-                float: right;
-            }
-            .topbar-left {
+            a.title-link:hover {
+                background-image: linear-gradient(180deg, #3f80bf, #336699);
             }
             
-            .main-title {
-                padding-right: 2em;
-                padding-left: 0em;
+            .topbar-right {
+                align-self: flex-end;
+                flex-direction: row;
                 flex-grow: 0;
+                padding-right: 2em;
+            }
+            .topbar-left {
+                align-self: flex-start;
+                flex-grow: 0;
+            }
+
+            .center-block p {
+                padding-top: 10px;
+                padding-bottom: 10px;
             }
             
             .content {
@@ -65,24 +72,34 @@
                 border-radius: 10px;
                 min-height: 5em;
             }
-            .center-block > p {
+            .center-block p {
                 padding: 10px;
+            }
+            .center-block:first-child {
+                
             }
 
         </style>
     </head>
     <body>
         <div id="topbar">
-            <ul class="topbar-left">
-                <li class="title-text main-title">Drew Heintz</li>
-            </ul>
-            <ul class="topbar-right">
-                <li><a class="title-text" href="/">Home</a></li>
-                <li><a class="title-text" href="https://github.com/Bindernews">GitHub</a></li>
-            </ul>
+            <div class="topbar-left">
+                <ul>
+                    <li class="title-text">Drew Heintz</li>
+                    <li><a href="vortexel.com" class="title-text">| vortexel.com |</a></li>
+                </ul>
+            </div>
+            <div class="topbar-right">
+                <ul>
+                    <li><a class="title-link" href="/">Home</a></li>
+                    <li><a class="title-link" href="https://github.com/Bindernews">GitHub</a></li>
+                    <li><a class="title-link" href="http://partyhorse.party">Party Horse</a></li>
+                </ul>
+            </div>
         </div>
         <div class="content">
             <div class="center-block">
+                <p>/* No comment */</p>
             </div>
         </div>
     </body>

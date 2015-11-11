@@ -1,51 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>A simple website</title>
-    <link rel="stylesheet" href="stylesheet.css" />
-    <style>
-        /* body selects all "body" tags */
-        body {
-            background: #eeccbb;
-        }
-        
-        p {
-            text-align: center;
-        }
-        
-        /* The .classname selects things with class="classname" */
-        .red {
-            color: red;
-        }
-        
-        .bold {
-            font-weight: bold;
-        }
-        
-        .floating {
-            position: absolute;
-            top: 50px;
-            left: 50%;
-        }
-        
-        /* The # selects something with id="rectangle" */
-        #rectangle {
-            width: 100px;
-            height: 100px;
-            background-color: green;
-            border-radius: 10px;
-        }
-    </style>
-</head>
-
-<body>
-    <!-- This has class=red so all text will be red -->
-    <p class="red bold">I love puns!</p>
-    <p>Left-aligned text</p>
-    
-    <!-- This has id=rectangle so #rectangle style will be applied to it -->
-    <div id="rectangle" class="bold">Booyeah</div>
-    
-    <div id="rectangle" class="floating"></div>
-</body>
+    <head>
+        <title>vortexel.com</title>
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+        <div class="topbar topbar-floating">
+        </div>
+        <div class="content">
+            <div class="topbar">
+                <div class="topbar-left">
+                    <ul>
+                        <li class="title-text title-main">Drew Heintz</li>
+                        <li><a href="vortexel.com" class="title-text">| vortexel.com |</a></li>
+                    </ul>
+                </div>
+                <div class="topbar-right">
+                    <ul>
+                        <li><a class="title-link" href="/">Home</a></li>
+                        <li><a class="title-link" href="https://github.com/Bindernews">GitHub</a></li>
+                        <li><a class="title-link" href="http://partyhorse.party">Party Horse</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="center-block">
+                <p>/* No comment */</p>
+            </div>
+        </div>
+    </body>
 </html>

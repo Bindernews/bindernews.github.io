@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .rectangle {
+                background-color: green;
+                width: 30%;
+                height: 200px;
+            }
+            #pie {
+                background-color: red;
+                width: 20%;
+                height: 2in;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+            }
+            #inner {
+                background-color: aqua;
+                width: 20%;
+                height: 80px;
+                margin: 10%;
+            }
+            .rectangle > .innerText {
+                background-color: blueviolet;
+                color: white;
+                padding: 15px;
+/*                margin: 15px;*/
+            }
+            
+            .center-text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+        
+        <script type="text/javascript">
+            
+        </script>
+    </head>
+    <body>
+        <div class="rectangle">
+            <div class="innerText">Booyeah my face is a walrus!</div>
+        </div>
+        <br>
+        <br>
+        <div stlye="position: relative;">
+            <div class="rectangle center-text">
+                <b>YOUR</b> face is a walrus!
+            </div>
+        </div>
+        <header id="pie">
+            <div id="inner"></div>
+        </header>
+    </body>
+</html>

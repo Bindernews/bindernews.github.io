@@ -1,7 +1,51 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>A simple website</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <style>
+        /* body selects all "body" tags */
+        body {
+            background: #eeccbb;
+        }
+        
+        p {
+            text-align: center;
+        }
+        
+        /* The .classname selects things with class="classname" */
+        .red {
+            color: red;
+        }
+        
+        .bold {
+            font-weight: bold;
+        }
+        
+        .floating {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+        }
+        
+        /* The # selects something with id="rectangle" */
+        #rectangle {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
 <body>
-<p>I love puns!</p>
-<h1>You should to!</h1>
+    <!-- This has class=red so all text will be red -->
+    <p class="red bold">I love puns!</p>
+    <p>Left-aligned text</p>
+    
+    <!-- This has id=rectangle so #rectangle style will be applied to it -->
+    <div id="rectangle" class="bold">Booyeah</div>
+    
+    <div id="rectangle" class="floating"></div>
 </body>
 </html>

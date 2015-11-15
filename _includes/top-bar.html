@@ -1,20 +1,11 @@
 <div class="topbar">
-    <div>
+    <div class="wrapper">
         <div class="topbar-content">
-            <div class="topbar-block"> <!-- left -->
-                <ul>
-                    <li class="title-text">Binder News</li>
-                    <li><a href="https://www.vortexel.com" class="title-text">| vortexel.com |</a></li>
-                </ul>
-            </div>
-            <div class="topbar-block topbar-spacer"><!-- spacer --></div>
-            <div class="topbar-block"> <!-- right -->
-                <ul>
-                    <li><a class="title-link" href="https://www.vortexel.com">Home</a></li>
-                    <li><a class="title-link" href="https://github.com/Bindernews">GitHub</a></li>
-                    <li><a class="title-link" href="http://partyhorse.party">Party Horse</a></li>
-                </ul>
-            </div>
+            <div class="title-main">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</div>
+            <nav class="topbar-spacer"></nav>
+            <nav><a href="/">Home</a></nav>
+            <nav><a href="https://github.com/Bindernews">GitHub</a></nav>
+            <nav><a href="http://partyhorse.party">Party Horse</a></nav>
         </div>
     </div>
 </div>

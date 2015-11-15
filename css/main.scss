@@ -1,0 +1,162 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Our variables
+$base-font-family:  Helvetica, Arial, sans-serif;
+$base-font-size:    16px;
+$small-font-size:   $base-font-size * 0.875;
+$title-font-size:   $base-font-size * 1.5;
+$base-line-height:  1.5;
+$topbar-padding:    0.7em;
+
+$spacing-unit:      30px;
+
+$titlebar-color1:   #274c73; // color from
+$titlebar-color2:   #336699; // color to
+$titlebar-link1:    #3f80bf; // link color from
+$titlebar-link2:    $titlebar-color2; // link color to
+$title-text-color:  azure;
+$background-color1: #708090;
+$background-color2: #4f5966;
+
+$text-color:        #111;
+$background-color:  #fdfdfd;
+$brand-color:       #2a7ae2;
+
+$grey-color:        #828282;
+$grey-color-light:  lighten($grey-color, 40%);
+$grey-color-dark:   darken($grey-color, 25%);
+
+$on-mobile:         500px;
+$on-laptop:         1000px;
+
+
+
+
+// Using media queries with like this:
+// @include media-query($palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+///////////////////////////////////////////////////////////
+// General styling classes and elements
+///////////////////////////////////////////////////////////
+
+html {
+    height: 100%;
+}
+body {
+    padding: 0px;
+    margin: 0px;
+    background: linear-gradient(to bottom, $background-color1, $background-color2);
+    height: 100%;
+    font-size: $base-font-size;
+    font-family: $base-font-family;
+}
+ul {
+    list-style-type: none;
+}
+li {
+    display: inline;
+}
+a {
+    text-decoration: none;
+}
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $on-laptop;
+}
+
+
+/////////////////////////////////////////////////////////////////////
+// Style the top bar and the links 
+/////////////////////////////////////////////////////////////////////
+
+.topbar {
+    background-image: linear-gradient(0deg, $titlebar-color1, $titlebar-color2);
+    width: 100%;
+}
+
+/* Content area for the top bar. Second unnamed div inside topbar */
+.topbar-content {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.topbar-content nav {
+    flex-grow: 0; // use minimum size always
+    padding: $topbar-padding 0em $topbar-padding 0em;
+    margin: $topbar-padding 0em $topbar-padding 0em;
+    
+    a {
+        color: $title-text-color;
+        padding: $topbar-padding 0.5em $topbar-padding 0.5em;
+    }
+    
+    a:hover {
+        /* Make it brighter when we hover over the link */
+        background-image: linear-gradient(180deg, $titlebar-link1, $titlebar-link2);
+    }
+}
+
+nav.topbar-spacer {
+    flex-grow: 1; // grow more than 0
+}
+
+.title-main {
+    /* Inverted title bar colors */
+//    background-image: linear-gradient(180deg, $titlebar-color1, $titlebar-color2);
+    padding: $topbar-padding;
+    color: $title-text-color;
+    font-size: $title-font-size;
+    flex-grow: 0;
+}
+
+// If we're on a moble device screen
+@include media-query($on-mobile) {
+    .topbar-content {
+        flex-direction: column;
+        
+        nav a {
+            width: 100%;
+        }
+    }
+    nav.topbar-spacer {
+        display: none;
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////////
+// Style the content area
+/////////////////////////////////////////////////////////////////////
+
+.center-block p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.center-block {
+    margin-top: 3em;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: lavender;
+    border-radius: 10px;
+    min-height: 5em;
+}
+.center-block p {
+    padding: 10px;
+}
+

@@ -1,2 +1,0 @@
-bindernews.github.io
-====================

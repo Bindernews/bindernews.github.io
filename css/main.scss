@@ -94,7 +94,24 @@ a {
     display: inline-flex;
     flex-direction: row;
     justify-content: center;
+    
+    :last-child {
+        padding-right: $topbar-padding;
+    }
+    
+    // The spacer takes ALL the space
+    .topbar-spacer {
+        flex-grow: 1;
+    }
+    
+    .title-main {
+        padding: $topbar-padding;
+        color: $title-text-color;
+        font-size: $title-font-size;
+        flex-grow: 0;
+    }
 }
+
 .topbar-content nav {
     flex-grow: 0; // use minimum size always
     padding: $topbar-padding 0em $topbar-padding 0em;
@@ -103,6 +120,7 @@ a {
     a {
         color: $title-text-color;
         padding: $topbar-padding 0.5em $topbar-padding 0.5em;
+        white-space: nowrap;
     }
     
     a:hover {
@@ -111,52 +129,58 @@ a {
     }
 }
 
-nav.topbar-spacer {
-    flex-grow: 1; // grow more than 0
-}
-
-.title-main {
-    /* Inverted title bar colors */
-//    background-image: linear-gradient(180deg, $titlebar-color1, $titlebar-color2);
-    padding: $topbar-padding;
-    color: $title-text-color;
-    font-size: $title-font-size;
-    flex-grow: 0;
-}
-
-// If we're on a moble device screen
-@include media-query($on-mobile) {
-    .topbar-content {
-        flex-direction: column;
-        
-        nav a {
-            width: 100%;
-        }
-    }
-    nav.topbar-spacer {
-        display: none;
-    }
-}
-
 
 /////////////////////////////////////////////////////////////////////
 // Style the content area
 /////////////////////////////////////////////////////////////////////
 
-.center-block p {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
 .center-block {
-    margin-top: 3em;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 2em 2% 0px 2%;
     background-color: lavender;
     border-radius: 10px;
-    min-height: 5em;
-}
-.center-block p {
-    padding: 10px;
+    min-height: 3em;
+    
+    p {
+        padding: 10px;
+    }
 }
 
+/////////////////////////////////////////////////////////////////////
+// If we're on a moble device screen
+/////////////////////////////////////////////////////////////////////
+
+@include media-query($on-mobile) {
+    .topbar-content {
+        flex-direction: column;
+        
+                
+        nav {
+            // increase h-padding to form an indent
+            padding-left: $topbar-padding * 2;
+            // decrease v-padding to reduce scrolling
+            padding-top: 0em;
+            padding-bottom: $topbar-padding * 0.5;
+        }
+        
+        .title-main {
+            // decrease v-padding more
+            padding-bottom: $topbar-padding * 0.5;
+        }
+        
+        // Disable the top bar spacer
+        .topbar-spacer {
+            display: none;
+        }
+    }
+    
+    // center block becomes flush with edges and has no gap
+    .center-block {
+        margin: 0px;
+        padding: 0em;
+        border-radius: 0px;
+        
+        :first-child {
+            margin-top: 0px;
+        }
+    }
+}

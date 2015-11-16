@@ -7,8 +7,15 @@ description: > # this means to ignore newlines until "baseurl:"
   but this one is mine.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://vortexel.com" # the base hostname & protocol for your site
-twitter_username: bindernews
 github_username:  Bindernews
 
 # Build settings
 markdown: kramdown
+
+nav:
+  - name: Home
+    url: /
+  - name: GitHub
+    url: https://github.com/BinderNews
+  - name: "Party Horse"
+    url: http://partyhorse.party

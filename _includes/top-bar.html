@@ -1,11 +1,14 @@
+
+{% if page.nav %}{% assign site_nav = page.nav %}{% else %}{% assign site_nav = site.nav %}{% endif %}
+
 <div class="topbar">
     <div class="wrapper">
         <div class="topbar-content">
             <div class="title-main">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</div>
             <nav class="topbar-spacer"></nav>
-            <nav><a href="/">Home</a></nav>
-            <nav><a href="https://github.com/Bindernews">GitHub</a></nav>
-            <nav><a href="http://partyhorse.party">Party Horse</a></nav>
+            {% for item in site_nav %}
+            <nav><a href="{{ item.url }}">{{ item.name }}</a></nav>
+            {% endfor %}
         </div>
     </div>
 </div>

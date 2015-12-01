@@ -15,6 +15,8 @@ markdown: kramdown
 nav:
   - name: Home
     url: /
+  - name: About
+    url: /about.html
   - name: GitHub
     url: https://github.com/BinderNews
   - name: "Party Horse"
